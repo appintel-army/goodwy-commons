@@ -112,7 +112,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
 
         if (isAutoTheme()) changeAutoTheme()
 
-        if (!packageName.startsWith("com.goodwy.", true)) {
+        if (!packageName.startsWith("com.", true)) {
             if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
                 val label = "You are using a fake version of the app. For your own safety download the original one from play.google.com. Thanks"
                 ConfirmationDialog(
@@ -792,7 +792,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
                                    playStoreInstalled: Boolean = true, ruStoreInstalled: Boolean = false,
                                    showAppIconColor : Boolean = false
     ) {
-        if (!packageName.contains("ywdoog".reversed(), true)) {
+        if (packageName.contains("ywdoog".reversed(), true)) {
             if (baseConfig.appRunCount > 100) {
                 val label = "You are using a fake version of the app. For your own safety download the original one from play.google.com. Thanks"
                 ConfirmationDialog(
