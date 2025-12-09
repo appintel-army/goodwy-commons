@@ -617,8 +617,8 @@ fun BaseSimpleActivity.launchCallIntent(recipient: String, handle: PhoneAccountH
             putExtra(IS_RIGHT_APP, key)
 
             if (isDefaultDialer()) {
-                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.goodwy.dialer.debug" else "com.goodwy.dialer"
-                val className = "com.goodwy.dialer.activities.DialerActivity"
+                val packageName = if (baseConfig.appId.contains(".debug", true)) "com.myoscontacts.dialer.debug" else "com.myoscontacts.dialer"
+                val className = "com.myoscontacts.dialer.activities.DialerActivity"
                 setClassName(packageName, className)
             }
 

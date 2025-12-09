@@ -15,7 +15,7 @@ import com.goodwy.commons.extensions.getStringValueOrNull
 // used for sharing privately stored contacts in Simple Contacts with Simple Dialer, Simple SMS Messenger and Simple Calendar Pro
 class MyContactsContentProvider {
     companion object {
-        private const val AUTHORITY = "com.goodwy.commons.contactsprovider"
+        private const val AUTHORITY = "com.myoscontacts.commons.contactsprovider"
         val CONTACTS_CONTENT_URI = "content://$AUTHORITY/contacts".toUri()
 
         const val FAVORITES_ONLY = "favorites_only"
@@ -32,7 +32,7 @@ class MyContactsContentProvider {
         fun getSimpleContacts(context: Context, cursor: Cursor?): ArrayList<SimpleContact> {
             val contacts = ArrayList<SimpleContact>()
             val packageName = context.packageName.removeSuffix(".debug")
-            if (packageName != "com.goodwy.dialer" && packageName != "com.goodwy.smsmessenger" && packageName != "com.goodwy.calendar") {
+            if (packageName != "com.myoscontacts.dialer" && packageName != "com.goodwy.smsmessenger" && packageName != "com.goodwy.calendar") {
                 return contacts
             }
 
@@ -70,8 +70,8 @@ class MyContactsContentProvider {
         fun getContacts(context: Context, cursor: Cursor?): ArrayList<Contact> {
             val contacts = ArrayList<Contact>()
             val packageName = context.packageName.removeSuffix(".debug")
-            if (packageName != "com.goodwy.dialer" && packageName != "com.goodwy.smsmessenger" && packageName != "com.goodwy.calendar"
-                && packageName != "com.goodwy.dialer.debug" && packageName != "com.goodwy.smsmessenger.debug" && packageName != "com.goodwy.calendar.debug") {
+            if (packageName != "com.myoscontacts.dialer" && packageName != "com.goodwy.smsmessenger" && packageName != "com.goodwy.calendar"
+                && packageName != "com.myoscontacts.dialer.debug" && packageName != "com.goodwy.smsmessenger.debug" && packageName != "com.goodwy.calendar.debug") {
                 return contacts
             }
 
